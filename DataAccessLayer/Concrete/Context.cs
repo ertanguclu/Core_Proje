@@ -13,5 +13,7 @@ namespace DataAccessLayer.Concrete
         {
             optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database=CoreProjeDB;integrated security=true");
         }
+
+        public int MyProperty { get; set; }
     }
 }
