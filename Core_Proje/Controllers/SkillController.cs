@@ -25,7 +25,7 @@ namespace Core_Proje.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddSkill(Skill skill) 
+        public IActionResult AddSkill(Skill skill)
         {
             skillManager.TAdd(skill);
             return RedirectToAction("Index");
@@ -34,6 +34,21 @@ namespace Core_Proje.Controllers
         {
             var values = skillManager.TGetByID(id);
             skillManager.TDelete(values);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult EditSkill(int id)
+        {
+            ViewBag.v1 = "Düzenleme";
+            ViewBag.v2 = "Yetenekler";
+            ViewBag.v3 = "Yetenek Güncelleme";
+            var values = skillManager.TGetByID(id);
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult EditSkill(Skill skill)
+        {
+            skillManager.TUpdate(skill);
             return RedirectToAction("Index");
         }
     }
