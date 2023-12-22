@@ -9,6 +9,9 @@ namespace Core_Proje.Controllers
         PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
         public IActionResult Index()
         {
+            ViewBag.v1 = "Proje Listesi";
+            ViewBag.v2 = "Projelerim";
+            ViewBag.v3 = "Proje Listesi";
             var values=portfolioManager.TGetList();
             return View(values);
         }
