@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
@@ -27,17 +29,23 @@ namespace Core_Proje.Controllers
             ViewBag.v1 = "Proje Listesi";
             ViewBag.v2 = "Projelerim";
             ViewBag.v3 = "Proje Ekleme";
-            if(p.Name !=null && p.ImageUrl !="" && 
-                p.Name.Length >=5 && p.Name.Length <=100)
+
+            PortfolioValidator validations = new PortfolioValidator();
+            ValidationResult results = validations.Validate(p);
+            if(results.IsValid)
             {
                 portfolioManager.TAdd(p);
+                return RedirectToAction("Index");
             }
             else
             {
-                //hata mesajı var
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
             }
-            portfolioManager.TAdd(p);
-            return RedirectToAction("Index");
+            return View();
+            
         }
     }
 }
