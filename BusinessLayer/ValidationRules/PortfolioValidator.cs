@@ -19,6 +19,8 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.Value).NotEmpty().WithMessage("Değer alanı boş geçilemez.");
             RuleFor(x => x.Name).MinimumLength(5).WithMessage("Proje adı en az 5 karakterden oluşmak zorundadır.");
             RuleFor(x => x.Name).MaximumLength(100).WithMessage("Proje adı en fazla 100 karekter olabilir.");
+            RuleFor(x => x.ProjectUrl).NotEmpty().WithMessage("Proje url alanı boş bırakılamaz.");
+            RuleFor(x => x.ProjectUrlTitle).NotEmpty().WithMessage("Proje url başlığı boş geçilemez.");
 
         }
     }
