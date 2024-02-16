@@ -27,6 +27,15 @@ namespace Core_Proje.Controllers
             ViewBag.v1 = "Proje Listesi";
             ViewBag.v2 = "Projelerim";
             ViewBag.v3 = "Proje Ekleme";
+            if(p.Name !=null && p.ImageUrl !="" && 
+                p.Name.Length >=5 && p.Name.Length <=100)
+            {
+                portfolioManager.TAdd(p);
+            }
+            else
+            {
+                //hata mesajı var
+            }
             portfolioManager.TAdd(p);
             return RedirectToAction("Index");
         }
