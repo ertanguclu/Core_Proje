@@ -18,5 +18,6 @@ namespace EntityLayer.Concrete
         public int Password { get; set; }
         public int ImageURL { get; set; }
         public bool Status { get; set; }
+        public List<UserMessage> UserMessages { get; set; }
     }
 }
