@@ -10,7 +10,7 @@ namespace Core_Proje.ViewComponents.Dashboard
 
         public IViewComponentResult Invoke()
         {
-            var values = messageManager.TGetList();
+            var values = messageManager.GetUserMessageWithUserService();
             return View(values);
         }
     }
