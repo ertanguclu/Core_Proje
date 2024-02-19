@@ -34,8 +34,10 @@ namespace Core_Proje.Areas.Writer.Controllers
                     UserName = p.UserName,
                     ImageUrl = p.ImageUrl
                 };
-
+            if (p.Password == p.ConfirmPassword)
+            {
                 var result = await _userManager.CreateAsync(w, p.Password);
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Login");
@@ -47,8 +49,10 @@ namespace Core_Proje.Areas.Writer.Controllers
                         ModelState.AddModelError("", item.Description);
                     }
                 }
+            }
 
             return View(p);
         }
     }
 }
+//1234567aA*
