@@ -4,81 +4,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
+@await Html.PartialAsync("/Areas/Writer/Views/Default/HeadPartial.cshtml")
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="~/skydash/vendors/feather/feather.css">
-    <link rel="stylesheet" href="~/skydash/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="~/skydash/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="~/skydash/css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="~/skydash/images/favicon.png" />
-</head>
 
 <body>
     <div class="container-scroller">
         <!-- partial:../../partials/_navbar.html -->
-        @await Html.Partial("/Views/Default/_SidebarPartial.cshtml")
+        @await Html.PartialAsync("/Areas/Writer/Views/Default/_NavbarPartial.cshtml")
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
 
             <!-- partial:../../partials/_sidebar.html -->
-            <nav class="sidebar sidebar-offcanvas" id="sidebar">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Mesajlarım</span>
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tables">
-                            <i class="icon-grid-2 menu-icon"></i>
-                            <span class="menu-title">Tablolar</span>
-                        </a>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#icons">
-                            <i class="icon-contract menu-icon"></i>
-                            <span class="menu-title">Profil</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../pages/documentation/documentation.html">
-                            <i class="icon-paper menu-icon"></i>
-                            <span class="menu-title">Ayarlar</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../pages/documentation/documentation.html">
-                            <i class="icon-paper menu-icon"></i>
-                            <span class="menu-title">Çıkış Yap</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            @await Html.PartialAsync("/Areas/Writer/Views/Default/_SidebarPartial.cshtml")
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -89,33 +26,16 @@
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->
-                <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
-                    </div>
-                </footer>
+                @await Html.PartialAsync("/Areas/Writer/Views/Default/_FooterPartial.cshtml")
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->
         </div>
         <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="~/skydash/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="~/skydash/js/off-canvas.js"></script>
-    <script src="~/skydash/js/hoverable-collapse.js"></script>
-    <script src="~/skydash/js/template.js"></script>
-    <script src="~/skydash/js/settings.js"></script>
-    <script src="~/skydash/js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
+
+    @await Html.PartialAsync("/Areas/Writer/Views/Default/_ScriptsPartial.cshtml")
+
 </body>
 
 </html>
