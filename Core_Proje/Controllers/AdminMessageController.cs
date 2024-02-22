@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 
 namespace Core_Proje.Controllers
 {
@@ -46,8 +48,12 @@ namespace Core_Proje.Controllers
             p.Receiver = "admin@gmail.com";
             p.SenderName = "Admin";
             p.Date=DateTime.Parse(DateTime.Now.ToShortDateString());
+            Context c = new Context();
+            var usernamesurname = c.Users.Where(x => x.Email == p.Receiver).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
+            p.ReceiverName = usernamesurname;
             writerMessageManager.TAdd(p);
             return RedirectToAction("SenderMessageList");
+
         }
     }
 }
