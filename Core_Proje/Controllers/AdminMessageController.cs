@@ -26,5 +26,12 @@ namespace Core_Proje.Controllers
             var values = WriterMessageManager.TGetByID(id);
             return View(values);
         }
+        public IActionResult AdminMessageDelete(int id)
+        {
+            var values = WriterMessageManager.TGetByID(id);
+            WriterMessageManager.TDelete(values);
+            return RedirectToAction("SenderMessageList");
+
+        }
     }
 }
