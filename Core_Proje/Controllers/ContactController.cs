@@ -19,5 +19,11 @@ namespace Core_Proje.Controllers
             messageManager.TDelete(values);
             return RedirectToAction("Index");
         }
+
+        public IActionResult ContactDetails(int id)
+        {
+            var values =messageManager.TGetByID(id);
+            return View(values);
+        }
     }
 }
