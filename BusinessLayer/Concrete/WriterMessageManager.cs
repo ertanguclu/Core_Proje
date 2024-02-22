@@ -23,24 +23,24 @@ namespace BusinessLayer.Concrete
             return _writerMessageDal.GetbyFilter(x => x.Receiver == p);
         }
 
-        public List<WriterMessage> GetListSendMessage(string p)
+        public List<WriterMessage> GetListSenderMessage(string p)
         {
             return _writerMessageDal.GetbyFilter(x => x.Sender == p);
         }
 
         public void TAdd(WriterMessage t)
         {
-            throw new NotImplementedException();
+            _writerMessageDal.Insert(t);
         }
 
         public void TDelete(WriterMessage t)
         {
-            throw new NotImplementedException();
+            _writerMessageDal.Delete(t);
         }
 
         public WriterMessage TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _writerMessageDal.GetByID(id);
         }
 
         public List<WriterMessage> TGetList()

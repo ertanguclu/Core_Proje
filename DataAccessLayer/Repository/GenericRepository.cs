@@ -44,15 +44,10 @@ namespace DataAccessLayer.Repository
             c.SaveChanges();
         }
 
-        public List<T> GetByFilter(Expression<Func<T, bool>> filter)
+        public List<T> GetbyFilter(Expression<Func<T, bool>> filter)
         {
             using var c = new Context();
             return c.Set<T>().Where(filter).ToList();
-        }
-
-        public List<T> GetbyFilter(Expression<Func<T, bool>> filter)
-        {
-            throw new NotImplementedException();
         }
     }
 }
