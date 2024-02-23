@@ -39,7 +39,6 @@ namespace Core_Proje.Controllers
         public IActionResult EditSocialMedia(int id)
         {
             var values = socialMediaManager.TGetByID(id);
-            socialMediaManager.TDelete(values);
             return View(values);
         }
 
