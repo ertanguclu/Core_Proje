@@ -51,7 +51,7 @@ namespace Core_Proje
             services.ConfigureApplicationCookie(options =>
             {
                 options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(45);
 
                 options.LoginPath = "/Writer/Login/Index/";
             });
