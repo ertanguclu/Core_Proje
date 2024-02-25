@@ -52,7 +52,7 @@ namespace Core_Proje
             {
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(45);
-
+                options.AccessDeniedPath = "/ErrorPage/Index/";
                 options.LoginPath = "/Writer/Login/Index/";
             });
         }
