@@ -78,8 +78,21 @@
 
         $("#btnid").click(x => {
             let id = $("#inpid").val();
+
+            $.ajax({
+                contentType:"application/json",
+                dataType:"json",
+                type:"Get",
+                url:"Experience2/GetById/",
+                data:{ExperienceID:id},
+                success:function(funk2){
+                    console.log(funk2);
+                }
+            })
             console.log(id);
         });
+
+
     </script>
 }
 <script src="~/lib/jquery/dist/jquery.js"></script>
