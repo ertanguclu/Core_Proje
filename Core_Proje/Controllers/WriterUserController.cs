@@ -16,20 +16,8 @@ namespace Core_Proje.Controllers
         }
         public IActionResult ListUser()
         {
-            var values = JsonConvert.SerializeObject(liste);
+            var values = JsonConvert.SerializeObject(userManager.TGetList());
             return Json(values);
         }
-        private static List<class0> liste = new List<class0>()
-        {
-            new class0{ID=1,Ad="Ali"},
-            new class0{ID=1,Ad="Ayşe"},
-            new class0{ID=1,Ad="Esra"},
-        };
-    }
-
-    public class class0
-    {
-        public int ID { get; set; }
-        public string Ad { get; set; }
     }
 }
