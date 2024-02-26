@@ -22,13 +22,9 @@
 <br />
 
 <div class="col-md-12">
-    <input type="text" class="form-control" id="inpname" placeholder="Ad" />
+    <input type="text" class="form-control" id="inpname" placeholder="Başlık" />
     <br />
-    <input type="text" class="form-control" id="inpsurname" placeholder="Soyad" />
-    <br />
-    <input type="text" class="form-control" id="inpusername" placeholder="KUllanıcı Adınız" />
-    <br />
-    <input type="text" class="form-control" id="inpmail" placeholder="Mail Adresi" />
+    <input type="text" class="form-control" id="inpdate" placeholder="Tarih" />
 </div>
 
 @section Scripts
@@ -51,6 +47,23 @@
                     });
                     htmlst += "</table>";
                     $("#listexperience").html(htmlst);
+                }
+            });
+        });
+
+        $("btnadd").click(function () {
+            let values = {
+                Name: $("#inpname").val(),
+                Date: $("#inpdate").val()
+            };
+
+            $.ajax({
+                type: "Post",
+                url: "/Experience2/AddExperience/",
+                data: values,
+                success: function (funk1) {
+                    let result = jQuery.parseJSON(funk1);
+                    alert("Başarılı bir şekilde eklendi");
                 }
             });
         });
