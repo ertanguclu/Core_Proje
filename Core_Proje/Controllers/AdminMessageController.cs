@@ -16,14 +16,14 @@ namespace Core_Proje.Controllers
         public IActionResult ReceiverMessageList()
         {
             string p;
-            p = "admin@gmail.com";
+            p = "ertangucluu@gmail.com";
             var values = writerMessageManager.GetListReceiverMessage(p);
             return View(values);
         }
         public IActionResult SenderMessageList()
         {
             string p;
-            p = "admin@gmail.com";
+            p = "ertangucluu@gmail.com";
             var values = writerMessageManager.GetListSenderMessage(p);
             return View(values);
         }
@@ -47,8 +47,8 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult AdminMessageSend(WriterMessage p)
         {
-            p.Receiver = "admin@gmail.com";
-            p.SenderName = "Admin";
+            p.Receiver = "ertangucluu@gmail.com";
+            p.SenderName = "Ertan Güçlü";
             p.Date=DateTime.Parse(DateTime.Now.ToShortDateString());
             Context c = new Context();
             var usernamesurname = c.Users.Where(x => x.Email == p.Receiver).Select(y => y.Name + " " + y.Surname).FirstOrDefault();

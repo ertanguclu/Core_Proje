@@ -6,7 +6,7 @@ namespace Core_Proje.Areas.Writer.Models
     public class UserLoginViewModel
     {
         [Display(Name ="Kullanıcı Adı")]
-        [Required(ErrorMessage ="Kullanıcı Adını Giriniz...!")]
+        [Required(ErrorMessage ="Kullanıcı Adınızı Giriniz...!")]
         public string Username { get; set; }
 
         [Display(Name = "Şifre")]
