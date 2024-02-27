@@ -12,8 +12,22 @@ namespace Core_Proje_Api.Controllers
         [HttpGet]
         public IActionResult CategoryList()
         {
-            var c = new Context();
+            using var c = new Context();
             return Ok(c.Categories.ToList());
+        }
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+           using var c=new Context();
+            var value = c.Categories.Find(id);
+            if (value == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(value);
+            }
         }
     }
 }
