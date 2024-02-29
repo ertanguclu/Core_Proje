@@ -47,7 +47,7 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult AdminMessageSend(WriterMessage p)
         {
-            p.Receiver = "ertangucluu@gmail.com";
+            p.Sender = "ertangucluu@gmail.com";
             p.SenderName = "Ertan Güçlü";
             p.Date=DateTime.Parse(DateTime.Now.ToShortDateString());
             Context c = new Context();

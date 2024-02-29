@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
@@ -33,8 +34,8 @@ namespace Core_Proje.Areas.Writer.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UserEditViewModel p)
         {
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            if(p.Picture != null)
+            var user = await _userManager.FindByNameAsync(User.Identity.Name); 
+            if (p.Picture != null)
             {
                 var resource=Directory.GetCurrentDirectory();
                 var extension = Path.GetExtension(p.Picture.FileName);
