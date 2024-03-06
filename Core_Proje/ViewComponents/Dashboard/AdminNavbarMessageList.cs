@@ -10,7 +10,7 @@ namespace Core_Proje.ViewComponents.Dashboard
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EfWriterMessageDal());
         public IViewComponentResult Invoke()
         {
-            string p = "admin@gmail.com";
+            string p = "ertangucluu@gmail.com";
             var values = writerMessageManager.GetListReceiverMessage(p).OrderByDescending(x=>x.WriterMessageID).Take(3).ToList();
             return View(values);
         }

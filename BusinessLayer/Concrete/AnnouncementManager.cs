@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Announcement t)
         {
-            throw new NotImplementedException();
+            _announcementDal.Insert(t);
         }
 
         public void TDelete(Announcement t)
         {
-            throw new NotImplementedException();
+            _announcementDal.Delete(t);
         }
 
         public Announcement TGetByID(int id)
@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Announcement t)
         {
-            throw new NotImplementedException();
+            _announcementDal.Update(t);
         }
     }
 }

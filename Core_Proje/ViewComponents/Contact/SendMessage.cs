@@ -9,7 +9,7 @@ namespace Core_Proje.ViewComponents.Contact
     public class SendMessage : ViewComponent
     {
         MessageManager messageManager = new MessageManager(new EfMessageDal());
-        [HttpGet]
+        //[HttpGet]
         public IViewComponentResult Invoke()
         {
             return View();
