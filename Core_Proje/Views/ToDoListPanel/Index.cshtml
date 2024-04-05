@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model List<ToDoList>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yapılacaklar</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="color:white">#</th>
+                            <th style="color:white">Başlık</th>
+                            <th style="color:white">Sil</th>
+                            <th style="color:white">Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>#</td>
+                                <td>@item.Content</td>
+                                <td><a href="/ToDoListPanel/DeleteToDoList/@item.ID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/ToDoListPanel/EditToDoList/@item.ID" class="btn btn-outline-info">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="/ToDoListPanel/AddToDoList/" class="btn btn-primary">Görev Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+

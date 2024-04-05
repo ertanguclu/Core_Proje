@@ -12,12 +12,8 @@
                 <h6 class="font-weight-normal mb-0">Yazar Paneli! Yeni Duyurular İçin <span class="text-primary"><a href="/Writer/Default/Index/">Hemen Tıkla!</a></span></h6>
             </div>
             <div class="col-12 col-xl-4">
-                <div class="justify-content-end d-flex">
-                    <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                        <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" aria-haspopup="true" aria-expanded="true">
-                            <i class="mdi mdi-calendar"></i> @((DateTime.Now).ToString("dd MMMM yyyy"))
-                        </button>                      
-                    </div>
+                <div class="justify-content-end d-flex">                  
+                    <h5>@((DateTime.Now).ToString("dd MMMM yyyy"))</h5>
                 </div>
             </div>
         </div>

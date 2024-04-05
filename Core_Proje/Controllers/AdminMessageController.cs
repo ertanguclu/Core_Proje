@@ -13,6 +13,7 @@ namespace Core_Proje.Controllers
     public class AdminMessageController : Controller
     {
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EfWriterMessageDal());
+
         public IActionResult ReceiverMessageList()
         {
             string p;

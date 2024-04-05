@@ -20,17 +20,17 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(ToDoList t)
         {
-            throw new NotImplementedException();
+            _toDoListDal.Insert(t);
         }
 
         public void TDelete(ToDoList t)
         {
-            throw new NotImplementedException();
+            _toDoListDal.Delete(t);
         }
 
         public ToDoList TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _toDoListDal.GetByID(id);
         }
 
         public List<ToDoList> TGetList()
@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(ToDoList t)
         {
-            throw new NotImplementedException();
+            _toDoListDal.Update(t);
         }
     }
 }

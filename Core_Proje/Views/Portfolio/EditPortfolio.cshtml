@@ -10,7 +10,7 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <p class="card-description"> Proje Düzenleme Paneli </p>
+                <h4>Proje Düzenleme Paneli</h4>
                 <form class="forms-sample">
                     @Html.HiddenFor(x => x.PortfolioID)
                     <br />
@@ -18,7 +18,7 @@
                     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.Name)
                     <br />
-                    <label>Görsel 1</label>
+                    <label>Görsel Kapak</label>
                     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.ImageUrl)
                     <br />
@@ -29,6 +29,14 @@
                     <label>Proje Url</label>
                     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.ProjectUrl)
+                    <br />    
+                    <label>Platform</label>
+                    @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Platform)
+                    <br />
+                    <label>Proje Url Başlığı</label>
+                    @Html.TextBoxFor(x => x.ProjectUrlTitle, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ProjectUrlTitle)
                     <br />
                     <label>Fiyat</label>
                     @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
@@ -38,15 +46,7 @@
                     @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.Value)
                     <br />
-                    <label>Platform</label>
-                    @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Platform)
-                    <br />
-                    <label>Proje Url Başlığı</label>
-                    @Html.TextBoxFor(x => x.ProjectUrlTitle, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.ProjectUrlTitle)
-                    <br />
-                    <button class="btn btn-info">Kaydet</button>
+                    <button class="btn btn-primary">Kaydet</button>
                 </form>
             </div>
         </div>

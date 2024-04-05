@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model List<WriterUser>
+
+@* <div class="col-md-4 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-title">Kayıt Olan Son 5 Kişi</p>
+            <ul class="icon-data-list">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div class="d-flex">
+                            <img src="@item.ImageUrl" alt="user">
+                            <div>
+                                <p class="text-info mb-1">@item.Name @item.Surname</p>
+                                <p class="mb-0">@item.Email</p>
+                                <small>@item.UserName</small>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div> *@
+
+<div class="col-md-6 col-xl-4 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex flex-row justify-content-between">
+                <h4 class="card-title">Son Kayıt Olan 5 Kişi</h4>
+                @* <p class="text-muted mb-1 small">View all</p> *@
+            </div>
+            <div class="preview-list">   
+                @foreach (var item in Model)
+                {
+                    <div class="preview-item border-bottom">
+                        <div class="preview-thumbnail">
+                            <img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/faces/person.jpg" alt="image" class="rounded-circle" />
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                            <div class="flex-grow">
+                                <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                    <h6 class="preview-subject"><span style="color:white;">@item.Name @item.Surname</span></h6>
+                                    <p class="text-muted text-medium"><span style="color:lightblue;">Kullanıcı Adı: @item.UserName</span></p>
+                                </div>
+                                <p class="text-muted"><span style="color:cornflowerblue;">@item.Email</span></p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

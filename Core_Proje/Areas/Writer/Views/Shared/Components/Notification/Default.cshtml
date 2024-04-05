@@ -3,6 +3,22 @@
 @{
     string color = "";
 }
+
+@if (@Model.Count() > 0)
+{
+    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        <i class="icon-bell mx-0"></i>
+        <span class="count"></span>
+    </a>
+}
+else
+{
+    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        <i class="icon-bell mx-0"></i>      
+    </a>
+}
+
+
 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
     <p class="mb-0 font-weight-normal float-left dropdown-header">Bildirimler</p>
     @foreach (var item in Model)
@@ -38,7 +54,11 @@
                 <p class="font-weight-light small-text mb-0 text-muted">
                     @item.Status
                 </p>
+                <p class="font-weight-light small-text mb-0 text-muted">
+                    @(((DateTime)item.Date).ToString("dd MMMM yyyy"))
+                </p>
             </div>
         </a>
-    }   
+    } 
+    <a href="/Writer/Announcement/Index" class="btn btn-outline-info col-12">Tüm Duyurular</a>
 </div>

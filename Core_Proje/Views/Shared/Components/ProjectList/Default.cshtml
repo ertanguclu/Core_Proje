@@ -10,13 +10,13 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th> Ana Görsel</th>
-                                <th> Proje Adı </th>
-                                <th> URL </th>
-                                <th> Fiyat </th>
-                                <th>Tamamlanma</th>
-                                <th> Durum </th>
+                                <th style="color:white">#</th>
+                                <th style="color:white"> Ana Görsel</th>
+                                <th style="color:white"> Proje Adı </th>
+                                <th style="color:white"> URL </th>
+                                <th style="color:white"> Fiyat </th>
+                                <th style="color:white">Tamamlanma</th>
+                                <th style="color:white"> Durum </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,7 +26,7 @@
                                     <td>@item.PortfolioID</td>
                                     <td><img src="@item.ImageUrl" /></td>
                                     <td>@item.Name</td>
-                                    <td>@item.ProjectUrl</td>
+                                    <td><a style="color:slateblue" href="@item.ProjectUrl">Proje Url</a></td>
                                     <td>@item.Price</td>
                                     <td>@item.Value</td>
                                     <td>

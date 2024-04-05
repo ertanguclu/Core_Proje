@@ -4,13 +4,13 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-<h1>Duyuru Detayları</h1>
+<h4>Duyuru Detayları</h4>
 <br />
 <form class="form-group">
     @Html.Label("ID")
-    @Html.TextBoxFor(x => x.ID,new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.ID,new { @class = "form-control",@readonly="readonly" })
     <br />
     @Html.Label("İçerik")
-    @Html.TextAreaFor(x=>x.Content,10,3,new{@class="form-control"})
+    @Html.TextAreaFor(x => x.Content, 10, 3, new { @class = "form-control", @readonly = "readonly" })
 
 </form>

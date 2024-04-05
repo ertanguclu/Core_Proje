@@ -1,47 +1,64 @@
-﻿<li class="nav-item dropdown border-left">
-    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-        <i class="mdi mdi-bell"></i>
-        <span class="count bg-danger"></span>
-    </a>
+﻿@using EntityLayer.Concrete
+@model List<Announcement>
+@{
+    string color = "";
+}
+<li class="nav-item dropdown border-left">
+    @if (@Model.Count() > 0)
+    {
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+            <i class="mdi mdi-bell"></i>
+            <span class="count bg-danger"></span>
+        </a>
+    }
+    else
+    {
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+            <i class="mdi mdi-bell"></i>
+        </a>
+    }
+
     <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-        <h6 class="p-3 mb-0">Bildirimler</h6>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <div class="preview-icon bg-dark rounded-circle">
-                    <i class="mdi mdi-calendar text-success"></i>
+        <p class="mb-0 font-weight-normal float-left dropdown-header">Bildirimler</p>
+        @foreach (var item in Model)
+        {
+            if (item.Status == "Yeni Yazı")
+            {
+                color = "preview-icon bg-success";
+            }
+            if (item.Status == "Yeni Video")
+            {
+                color = "preview-icon bg-warning";
+            }
+            if (item.Status == "Konferans")
+            {
+                color = "preview-icon bg-info";
+            }
+            if (item.Status == "Bootcamp")
+            {
+                color = "preview-icon bg-primary";
+            }
+            if (item.Status == "Workshop")
+            {
+                color = "preview-icon bg-danger";
+            }
+            <a class="dropdown-item preview-item" href="/Announcement/Index/@item.ID">
+                <div class="preview-thumbnail">
+                    <div class="@color">
+                        <i class="ti-info-alt mx-0"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="preview-item-content">
-                <p class="preview-subject mb-1">Bugün Yapılacaklar</p>
-                <p class="text-muted ellipsis mb-0"> ToDoList üzeride yapman gereken işler </p>
-            </div>
-        </a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <div class="preview-icon bg-dark rounded-circle">
-                    <i class="mdi mdi-settings text-danger"></i>
+                <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal">@item.Title</h6>
+                    <p class="font-weight-light small-text mb-0 text-muted">
+                        @item.Status
+                    </p>
+                    <p class="font-weight-light small-text mb-0 text-muted">
+                        @(((DateTime)item.Date).ToString("dd MMMM yyyy"))
+                    </p>
                 </div>
-            </div>
-            <div class="preview-item-content">
-                <p class="preview-subject mb-1">Ayarlar</p>
-                <p class="text-muted ellipsis mb-0"> Dashboard güncellendi </p>
-            </div>
-        </a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-                <div class="preview-icon bg-dark rounded-circle">
-                    <i class="mdi mdi-link-variant text-warning"></i>
-                </div>
-            </div>
-            <div class="preview-item-content">
-                <p class="preview-subject mb-1">Duyuru Detayları</p>
-                <p class="text-muted ellipsis mb-0"> Duyuru Panaline Git </p>
-            </div>
-        </a>
-        <div class="dropdown-divider"></div>
-        <p class="p-3 mb-0 text-center">Tüm Bildirimleri Gör</p>
+            </a>
+        }
+        <a href="/Announcement/Index/" class="btn btn-outline-info col-12">Tüm Duyurular</a>
     </div>
 </li>

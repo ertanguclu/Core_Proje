@@ -25,10 +25,11 @@
                         @foreach (var item in Model)
                         {                   
                             <tr>
-                                <th>@item.WriterMessageID</th>
+                                <td>#</td>
                                 <td>@item.Subject</td>
                                 <td>@item.SenderName</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                <td><a href="/Writer/Message/DeleteReceiverMessage/@item.WriterMessageID" class="btn btn-outline-danger">Sil</a></td>
                                 <td><a href="/Writer/Message/MessageDetails/@item.WriterMessageID" class="btn btn-outline-primary">Mesajı Gör</a></td>
                             </tr>
                         }

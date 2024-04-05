@@ -2781,6 +2781,15 @@
     <None Include="wwwroot\argon-dashboard-master\ISSUE_TEMPLATE.md" />
     <None Include="wwwroot\argon-dashboard-master\LICENSE.md" />
     <None Include="wwwroot\argon-dashboard-master\README.md" />
+    <None Include="wwwroot\login-form-14\.DS_Store" />
+    <None Include="wwwroot\login-form-14\css\.DS_Store" />
+    <None Include="wwwroot\login-form-14\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\login-form-14\css\bootstrap\mixins\.DS_Store" />
+    <None Include="wwwroot\login-form-14\fonts\.DS_Store" />
+    <None Include="wwwroot\login-form-14\images\.DS_Store" />
+    <None Include="wwwroot\login-form-14\js\.DS_Store" />
+    <None Include="wwwroot\login-form-14\scss\.DS_Store" />
+    <None Include="wwwroot\login-form-14\scss\bootstrap\.DS_Store" />
   </ItemGroup>
 
   <ItemGroup>

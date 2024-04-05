@@ -11,13 +11,13 @@
             <h4 class="card-title">Deneyimler</h4>
             <div class="table-responsive">
                 <table class="table">
-                    <thead>
+                    <thead >
                         <tr>
-                            <th>#</th>
-                            <th>Başlık</th>
-                            <th>Tarih</th>
-                            <th>Sil</th>
-                            <th>Güncelle</th>
+                            <th style="color:white">#</th>
+                            <th style="color:white">Başlık</th>
+                            <th style="color:white">Tarih</th>
+                            <th style="color:white">Sil</th>
+                            <th style="color:white">Güncelle</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,12 +28,12 @@
                                 <td>@item.Name</td>
                                 <td>@item.Date</td>
                                 <td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-outline-danger">Sil</a></td>
-                                <td><a href="/Experience/EditExperience/@item.ExperienceID" class="btn btn-outline-success">Güncelle</a></td>
+                                <td><a href="/Experience/EditExperience/@item.ExperienceID" class="btn btn-outline-info">Güncelle</a></td>
                             </tr>
                         }                 
                     </tbody>
                 </table>
-                <a href="/Experience/AddExperience" class="btn btn-outline-info">Yeni Deneyim Ekle</a>
+                <a href="/Experience/AddExperience" class="btn btn-primary">Yeni Deneyim Ekle</a>
             </div>
         </div>
     </div>

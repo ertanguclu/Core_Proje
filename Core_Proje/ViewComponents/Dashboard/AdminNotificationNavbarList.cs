@@ -9,11 +9,24 @@ using System.Threading.Tasks;
 namespace Core_Proje.ViewComponents.Dashboard
 {
     public class AdminNotificationNavbarList:ViewComponent
-    {       
+    {
+        AnnouncementManager announcementManager = new AnnouncementManager(new EfAnnouncementDal());
+        private readonly UserManager<WriterUser> _userManager;
 
-        public IViewComponentResult Invoke()
+        public AdminNotificationNavbarList(UserManager<WriterUser> userManager)
         {
-          return View();
+            _userManager = userManager;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.UserImage = user.ImageUrl;
+            ViewBag.UserNS = user.Name + " " + user.Surname;
+
+
+            var values = announcementManager.TGetList().OrderByDescending(x => x.Date).Take(3).ToList();
+            return View(values);
         }
     }
 }

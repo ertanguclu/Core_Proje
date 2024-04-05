@@ -75,7 +75,20 @@ namespace Core_Proje.Areas.Writer.Controllers
             p.ReceiverName = usernamesurname;
             writerMessageManager.TAdd(p);
             return RedirectToAction("SenderMessage");
-
+        }
+        [Route("DeleteSenderMessage/{id}")]
+        public IActionResult DeleteSenderMessage(int id)
+        {
+            var values = writerMessageManager.TGetByID(id);
+            writerMessageManager.TDelete(values);
+            return RedirectToAction("SenderMessage");
+        }
+        [Route("DeleteReceiverMessage/{id}")]
+        public IActionResult DeleteReceiverMessage(int id)
+        {
+            var values = writerMessageManager.TGetByID(id);
+            writerMessageManager.TDelete(values);
+            return RedirectToAction("ReceiverMessage");
         }
     }
 }

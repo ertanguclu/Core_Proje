@@ -3,13 +3,16 @@ using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System;
 using System.Threading.Tasks;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
-    [AllowAnonymous]
+    
     [Area("Writer")]
     [Route("Writer/[controller]/[action]")]
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
@@ -28,16 +31,16 @@ namespace Core_Proje.Areas.Writer.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UserRegisterViewModel p)
         {
-            
+
                 WriterUser w = new WriterUser()
                 {
                     Name = p.Name,
                     Surname = p.Surname,
                     Email = p.Mail,
                     UserName = p.UserName,
-                    ImageUrl = p.ImageUrl
+                    //ImageUrl = p.ImageUrl
                 };
-            if (p.Password == p.ConfirmPassword)
+            if (p.Password == p.ConfirmPassword && p.Password != null)
             {
                 var result = await _userManager.CreateAsync(w, p.Password);
 
@@ -58,4 +61,4 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
     }
 }
-//1234567aA*
+
